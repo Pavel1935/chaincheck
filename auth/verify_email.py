@@ -4,16 +4,14 @@ from Constants import Constants
 from conftest import generate_email, verification_code
 
 class TestVerifyEmail:
-    def test_verify_email(self, generate_email, verification_code):
-        if not verification_code:
-            pytest.skip("Не удалось получить код из почты")
+    def test_verify_email(self):
 
-        endpoint = "/auth/verify-email"
+        endpoint = "/Auth/verify-email"
         url = Constants.API_URL + endpoint
 
         body = {
-            "email": generate_email,
-            "code": verification_code
+            "email": Constants.EMAIL,
+            "code": "164806"
         }
 
         response = requests.post(url, json=body)

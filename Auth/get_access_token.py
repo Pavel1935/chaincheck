@@ -4,11 +4,11 @@ from Constants import Constants
 class TestGetAccessToken:
 
     def test_get_access_token(self):
-        endpoint = "/Auth/refresh-token"
+        endpoint = "/auth/refresh-token"
         url = Constants.API_URL + endpoint
 
         cookies = {
-            "refresh_token": Constants.REFRESH_TOKEN
+            "refresh_token": "0198080a-57fe-7364-b01b-e4a372504fdd"
         }
 
         response = requests.post(url, cookies=cookies)

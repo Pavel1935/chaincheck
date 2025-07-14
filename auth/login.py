@@ -4,11 +4,11 @@ from conftest import generate_email
 
 
 class TestLogin:
-    def test_login(self, generate_email):
+    def test_login(self):
 
-        url = Constants.API_URL + "/auth/login"
+        url = Constants.API_URL + "/Auth/login"
 
-        response = requests.post(url, json={"email": generate_email})
+        response = requests.post(url, json={"email": Constants.EMAIL})
         print("RESPONSE TEXT:", response.text)
 
         data = response.json()
